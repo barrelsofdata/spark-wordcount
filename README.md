@@ -1,5 +1,5 @@
-# Spark Boilerplate
-This is a boilerplate project for Apache Spark. The related blog post can be found at [https://www.barrelsofdata.com/spark-boilerplate-using-scala](https://www.barrelsofdata.com/spark-boilerplate-using-scala)
+# Spark Word Count with Unit Tests
+This is a project detailing how to write word count program in Apache Spark along with unit test cases. The related blog post can be found at [https://www.barrelsofdata.com/spark-word-count-with-unit-tests](https://www.barrelsofdata.com/spark-word-count-with-unit-tests)
 
 ## Build instructions
 From the root of the project execute the below commands
@@ -22,5 +22,5 @@ From the root of the project execute the below commands
 
 ## Run
 ```shell script
-spark-submit --master yarn --deploy-mode cluster build/libs/spark-boilerplate-1.0.jar
+spark-submit --master yarn --deploy-mode cluster build/libs/spark-wordcount-1.0.jar hdfs://path/to/input/file.txt hdfs://path/to/output/directory
 ```
