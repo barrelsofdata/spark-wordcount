@@ -23,7 +23,16 @@ object Driver {
       .rdd.reduceByKey(_ + _)
       .toDF("word", "frequency")
 
-    wordFrequencies.write.option("header","true").csv(outputFilePath)
+//    val wordFrequencies: DataFrame = words
+//      .groupBy(col("value")).count()
+//      .toDF("word", "frequency")
+
+    wordFrequencies
+      .coalesce(1)
+      .write
+      .option("header","true")
+      .csv(outputFilePath)
+
     LOG.info(s"Result successfully written to $outputFilePath")
   }
 
